@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CoursatyMobApp.Views.Courses.CourseInfoDetailPage"
+             BackgroundColor="#F2F2F2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="12"
+                    BorderColor="Orange"
+                    IsClippedToBounds="True"
+                    BackgroundColor="White"
+                    Margin="5,5,5,5">
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="Center">
+                        <Image Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="200" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Name}" FontSize="Medium"
+                               FontAttributes="Bold"/>
+
+                        <Label Text="{Binding Creation}"
+                               FontSize="Micro"
+                               HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+
+                    <Label Text="{Binding Description}"
+                               FontSize="Medium" />
+                    
+                    <Button BackgroundColor="Green" 
+                            Text="Subscribe"
+                            TextColor="White"
+                            CornerRadius="20"
+                            Margin="0,10,0,0"/>
+                </StackLayout>
+                
+                
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

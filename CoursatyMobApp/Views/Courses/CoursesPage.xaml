@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CoursatyMobApp.Views.Courses.CoursesPage"
+             BackgroundColor="#F2F2F2"
+             Title="Courses">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}" />
+            
+            <ListView x:Name="lstCourses" ItemsSource="{Binding Courses}"
+                      HasUnevenRows="True"
+                      ItemSelected="lstCourses_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="12"
+                                   BorderColor="Orange"
+                                   IsClippedToBounds="True"
+                                   BackgroundColor="White"
+                                   Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" Grid.Column="0"
+                                           Source="{Binding Image}" 
+                                            Aspect="AspectFill" />
+
+                                    <StackLayout Grid.Row="0" Grid.Column="1">
+                                        <Label Text="{Binding Name}" FontSize="Medium" />
+                                        <Label Text="{Binding Description}" FontSize="Micro"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
